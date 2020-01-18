@@ -75,8 +75,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Interfaces\IViewModel.cs" />
+    <Compile Include="Models\ResultChoiceModel.cs" />
     <Compile Include="ViewModels\LiveCameraViewModel.cs" />
     <Compile Include="ViewModels\ResultsViewModel.cs" />
+    <Compile Include="Common\BindableBase.cs" />
     <Compile Include="Views\LiveCameraView.xaml.cs">
       <DependentUpon>LiveCameraView.xaml</DependentUpon>
     </Compile>

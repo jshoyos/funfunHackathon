@@ -1,12 +1,12 @@
-﻿using Prism.Commands;
-using System;
-using System.Collections.ObjectModel;
+﻿using HackatownRecyling.Common;
+using Prism.Commands;
 using System.Windows.Input;
 
 namespace HackatownRecyling.ViewModels
 {
-    public class ResultsViewModel
+    public class ResultsViewModel : BindableBase
     {
+        private string _firstChoiceText;
         public ResultsViewModel()
         {
             RegisterCommands();
@@ -15,6 +15,44 @@ namespace HackatownRecyling.ViewModels
         public ICommand FirstChoiceCommand { get; private set; }
         public ICommand SecondChoiceCommand { get; private set; }
         public ICommand ThirdChoiceCommand { get; private set; }
+        public string FirstChoiceText
+        {
+            get => _firstChoiceText;
+            set
+            {
+                if(_firstChoiceText != value)
+                {
+                    _firstChoiceText = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string SecondChoiceText
+        {
+            get => _firstChoiceText;
+            set
+            {
+                if (_firstChoiceText != value)
+                {
+                    _firstChoiceText = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string ThirdChoiceText
+        {
+            get => _firstChoiceText;
+            set
+            {
+                if (_firstChoiceText != value)
+                {
+                    _firstChoiceText = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         private void RegisterCommands()
         {
@@ -30,7 +68,7 @@ namespace HackatownRecyling.ViewModels
 
         private void ChoiceCommandExecute(int? choiceIndex)
         {
-            
+
         }
     }
 }
