@@ -36,7 +36,8 @@ namespace HackatownRecyling.Services
         public void ShowResultView(string fileName)
         {
             var view = _lifetimeScope.Resolve<ResultsView>();
-            _eventAggregator.GetEvent<ImageLoadedByUserEvent>().Publish(fileName);
+            view.LoadImage(fileName);
+            //_eventAggregator.GetEvent<ImageLoadedByUserEvent>().Publish(fileName);
             view.Show();
         }
 

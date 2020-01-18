@@ -10,7 +10,6 @@ namespace HackatownRecyling.ViewModels
 {
     public class ResultsViewModel : BindableBase, IDisposable
     {
-        private string _firstChoiceText;
         private BitmapSource _imageSource;
         private readonly IEventAggregator _eventAggregator;
 
@@ -25,7 +24,7 @@ namespace HackatownRecyling.ViewModels
             SecondChoice = new ResultChoiceModel() { Name = "Glass", Score = 0.8 };
             ThirdChoice = new ResultChoiceModel() { Name = "Trash", Score = 0.6 };
             _eventAggregator = eventAggregator;
-            _eventAggregator.GetEvent<ImageLoadedByUserEvent>().Subscribe(ShowImage);
+            //_eventAggregator.GetEvent<ImageLoadedByUserEvent>().Subscribe(ShowImage);
         }
 
         public ICommand FirstChoiceCommand { get; private set; }
@@ -46,9 +45,6 @@ namespace HackatownRecyling.ViewModels
                 OnPropertyChanged();
             }
         }
-        
-
-        
 
         private void RegisterCommands()
         {
@@ -67,7 +63,7 @@ namespace HackatownRecyling.ViewModels
 
         }
 
-        private void ShowImage(string fileName)
+        public void ShowImage(string fileName)
         {
             ImageSource = new BitmapImage(new Uri(fileName));
         }
