@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HackatownRecyling.Interfaces
+﻿namespace HackatownRecyling.Interfaces
 {
     public interface IWindowService
     {
         void ShowResultView();
         void ShowLiveCameraView();
+        string ShowFileDialog();
     }
 }

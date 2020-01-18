@@ -9,27 +9,37 @@ namespace HackatownRecyling.Services
     {
         private readonly LiveCameraView _liveCameraView;
         private readonly ResultsView _resultsView;
+        private readonly ILifetimeScope _lifetimeScope;
 
-        public WindowService(ILifetimeScope scope)
+        public WindowService(ILifetimeScope lifetimeScope)
         {
-            _liveCameraView = scope.Resolve<LiveCameraView>();
-            _resultsView = scope.Resolve<ResultsView>();
+            _lifetimeScope = lifetimeScope;
         }
 
-        public void ShowFileDialog()
+        public string ShowFileDialog()
         {
+            string fileName = null;
             var dialog = new OpenFileDialog();
-            dialog.ShowDialog();
+            var result = dialog.ShowDialog();
+
+            if(result == true)
+            {
+                fileName = dialog.FileName;
+            }
+
+            return fileName;
         }
 
         public void ShowResultView()
         {
+            var view = _lifetimeScope.Resolve<ResultsView>();
             _resultsView.Show();
         }
 
         public void ShowLiveCameraView()
         {
-            _liveCameraView.Show();
+            var view = _lifetimeScope.Resolve<LiveCameraView>();
+            _resultsView.Show();
         }
     }
 }
