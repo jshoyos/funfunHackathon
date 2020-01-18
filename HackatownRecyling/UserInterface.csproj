@@ -79,6 +79,8 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Interfaces\IPlaceHolder.cs" />
+    <Compile Include="Interfaces\IWindowService.cs" />
+    <Compile Include="Services\WindowService.cs" />
     <Compile Include="Shell\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
