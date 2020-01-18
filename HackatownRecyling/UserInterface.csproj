@@ -63,6 +63,9 @@
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net46\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="Matrox.MatroxImagingLibrary">
+      <HintPath>..\..\..\..\..\..\Program Files\Matrox Imaging\MIL\MIL.NET\Matrox.MatroxImagingLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Matrox.MatroxImagingLibrary.WPF">
       <HintPath>..\..\..\..\..\..\Program Files\Matrox Imaging\MIL\MIL.NET\Matrox.MatroxImagingLibrary.WPF.dll</HintPath>
     </Reference>
@@ -103,6 +106,7 @@
     <Compile Include="Common\PrismEvents.cs" />
     <Compile Include="Interfaces\IViewModel.cs" />
     <Compile Include="Models\ResultChoiceModel.cs" />
+    <Compile Include="Services\ClassificationMockService.cs" />
     <Compile Include="Services\ClassificationService.cs" />
     <Compile Include="Interfaces\IClassificationService.cs" />
     <Compile Include="ViewModels\LiveCameraViewModel.cs" />
