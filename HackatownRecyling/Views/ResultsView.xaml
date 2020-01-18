@@ -7,22 +7,32 @@
         xmlns:local="clr-namespace:HackatownRecyling.Views"
         mc:Ignorable="d"
         Title="ResultsView" Height="450" Width="800">
-    <UniformGrid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
         <Image Grid.ColumnSpan="3"/>
-        <Button Grid.Row="1" Command="{Binding FirstChoiceCommand}">
+        <Button Command="{Binding FirstChoiceCommand}" Grid.Row="1">
             <Button.CommandParameter>
                 <sys:Int32>0</sys:Int32>
             </Button.CommandParameter>
         </Button>
-        <Button Grid.Row="1">
+        <Button Command="{Binding SecondChoiceCommand}" Grid.Row="1" Grid.Column="1">
             <Button.CommandParameter>
                 <sys:Int32>1</sys:Int32>
             </Button.CommandParameter>
         </Button>
-        <Button Grid.Row="1">
+        <Button Command="{Binding ThirdChoiceCommand}" Grid.Row="1" Grid.Column="2">
             <Button.CommandParameter>
                 <sys:Int32>2</sys:Int32>
             </Button.CommandParameter>
         </Button>
-    </UniformGrid>
+    </Grid>
 </Window>
