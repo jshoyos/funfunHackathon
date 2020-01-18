@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace HackatownRecyling.ViewModels
 {
@@ -47,7 +48,7 @@ namespace HackatownRecyling.ViewModels
             var fileName =_windowService.ShowFileDialog();
             if (!string.IsNullOrEmpty(fileName))
             { 
-                _windowService.ShowResultView();
+                _windowService.ShowResultView(fileName);
             }
         }
     }

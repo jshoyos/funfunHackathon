@@ -32,7 +32,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Image Grid.ColumnSpan="3" Source="{Binding LoadedImage}"/>
+        <Image Grid.ColumnSpan="3" Source="{Binding ImageSource}"/>
         <Button Command="{Binding FirstChoiceCommand}" Grid.Row="1" ContentTemplate="{StaticResource ChoiceTemplate}" Content="{Binding FirstChoice}">
             <Button.CommandParameter>
                 <sys:Int32>0</sys:Int32>
