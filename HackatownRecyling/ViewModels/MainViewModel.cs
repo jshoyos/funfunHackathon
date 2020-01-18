@@ -13,8 +13,8 @@ namespace HackatownRecyling.ViewModels
     {
         private readonly IWindowService _windowService;
 
-        public DelegateCommand uploadCommand { get; private set; }
-        public DelegateCommand liveCameraCommand { get; private set; }
+        public DelegateCommand UploadCommand { get; private set; }
+        public DelegateCommand LiveCameraCommand { get; private set; }
 
         public MainViewModel(IWindowService windowService)
         {
@@ -23,16 +23,16 @@ namespace HackatownRecyling.ViewModels
         }
         public void RegisterCommands()
         {
-            uploadCommand=new DelegateCommand(UploadCommandExecute, UploadCanExecute);
-            liveCameraCommand = new DelegateCommand(liveCameraCommandExecute, liveCameraCanExecute);
+            UploadCommand=new DelegateCommand(UploadCommandExecute, UploadCanExecute);
+            LiveCameraCommand = new DelegateCommand(LiveCameraCommandExecute, LiveCameraCanExecute);
         }
 
-        private bool liveCameraCanExecute()
+        private bool LiveCameraCanExecute()
         {
             return true;
         }
 
-        private void liveCameraCommandExecute()
+        private void LiveCameraCommandExecute()
         {
             _windowService.ShowLiveCameraView();
         }
