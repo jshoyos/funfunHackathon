@@ -1,4 +1,5 @@
 ﻿using HackatownRecyling.Common;
+using System.ComponentModel;
 
 namespace HackatownRecyling.Models
 {
@@ -7,6 +8,16 @@ namespace HackatownRecyling.Models
         private string _name;
         private double _score;
 
+        public ResultChoiceModel()
+        {
+            _name = "DummyResult";
+            _score = 0.0;
+        }
+        public ResultChoiceModel(string name, double score)
+        {
+            _name = name;
+            _score = score;
+        }
         public string Name
         {
             get => _name;
