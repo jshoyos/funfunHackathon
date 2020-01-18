@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HackatownRecyling.ViewModels
 {
-    class MainViewModel
+    public class MainViewModel
     {
     }
 }
