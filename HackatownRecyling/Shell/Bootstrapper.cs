@@ -19,6 +19,7 @@ namespace HackatownRecyling.Shell
             #region services
             builder.RegisterType<WindowService>().As<IWindowService>().SingleInstance();
             builder.RegisterType<ResultsView>().AsSelf();
+            builder.RegisterType<LiveCameraView>().AsSelf();
             #endregion
 
             return builder.Build();

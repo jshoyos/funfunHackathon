@@ -13,6 +13,6 @@
         </Grid.ColumnDefinitions>
 
         <Button Command="{Binding uploadCommand}"></Button>
-        <Button Grid.Column="1"></Button>
+        <Button Grid.Column="1" Command="{Binding liveCameraCommand}"></Button>
     </Grid>
 </Window>
