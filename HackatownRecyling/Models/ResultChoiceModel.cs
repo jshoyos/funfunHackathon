@@ -5,7 +5,7 @@ namespace HackatownRecyling.Models
     public class ResultChoiceModel : BindableBase
     {
         private string _name;
-        private int _score;
+        private double _score;
 
         public string Name
         {
@@ -20,7 +20,7 @@ namespace HackatownRecyling.Models
             }
         }
 
-        public int Score
+        public double Score
         {
             get => _score;
             set
