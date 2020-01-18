@@ -16,6 +16,12 @@ namespace HackatownRecyling.Views
             InitializeComponent();
             DataContext = viewModel;
             _viewModel = viewModel;
+            Closed += ResultsView_Closed;
+        }
+
+        private void ResultsView_Closed(object sender, EventArgs e)
+        {
+            _viewModel.Dispose();
         }
 
         internal void LoadImage(string fileName)

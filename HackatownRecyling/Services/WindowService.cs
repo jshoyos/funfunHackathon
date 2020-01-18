@@ -21,8 +21,10 @@ namespace HackatownRecyling.Services
         public string ShowFileDialog()
         {
             string fileName = null;
-            var dialog = new OpenFileDialog();
-            dialog.Filter = "Image Files (*.PNG;*.JPG)|*.PNG;*.JPG";
+            var dialog = new OpenFileDialog
+            {
+                Filter = "Image Files (*.PNG;*.JPG)|*.PNG;*.JPG"
+            };
             var result = dialog.ShowDialog();
 
             if(result == true)

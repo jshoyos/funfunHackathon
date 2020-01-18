@@ -7,7 +7,7 @@ namespace HackatownRecyling.Services
     {
         public void Classify(string filename)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

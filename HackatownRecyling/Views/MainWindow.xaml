@@ -12,7 +12,7 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Command="{Binding UploadCommand}"></Button>
-        <Button Grid.Column="1" Command="{Binding LiveCameraCommand}"></Button>
+        <Button Command="{Binding UploadCommand}" Margin="25"  Content="Browse..."/>
+        <Button Grid.Column="1" Command="{Binding LiveCameraCommand}" Margin="25" Content="Live Camera"/>
     </Grid>
 </Window>
