@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace HackatownRecyling.ViewModels
 {
@@ -13,8 +14,8 @@ namespace HackatownRecyling.ViewModels
     {
         private readonly IWindowService _windowService;
 
-        public DelegateCommand uploadCommand { get; private set; }
-        public DelegateCommand liveCameraCommand { get; private set; }
+        public ICommand uploadCommand { get; private set; }
+        public ICommand liveCameraCommand { get; private set; }
 
         public MainViewModel(IWindowService windowService)
         {
@@ -47,7 +48,7 @@ namespace HackatownRecyling.ViewModels
             var fileName =_windowService.ShowFileDialog();
             if (!string.IsNullOrEmpty(fileName))
             { 
-                _windowService.ShowResultView();
+                _windowService.ShowResultView(fileName);
             }
         }
     }

@@ -18,7 +18,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
-        <Image Grid.ColumnSpan="3"/>
+        <Image Grid.ColumnSpan="3" Source="{Binding ImageSource}"/>
         <Button Command="{Binding FirstChoiceCommand}" Grid.Row="1">
             <Button.CommandParameter>
                 <sys:Int32>0</sys:Int32>
