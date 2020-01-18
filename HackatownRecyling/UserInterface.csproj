@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -78,6 +79,8 @@
     <Compile Include="Common\PrismEvents.cs" />
     <Compile Include="Interfaces\IViewModel.cs" />
     <Compile Include="Models\ResultChoiceModel.cs" />
+    <Compile Include="Services\ClassificationService.cs" />
+    <Compile Include="Interfaces\IClassificationService.cs" />
     <Compile Include="ViewModels\LiveCameraViewModel.cs" />
     <Compile Include="ViewModels\ResultsViewModel.cs" />
     <Compile Include="Common\BindableBase.cs" />
@@ -95,7 +98,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Interfaces\IPlaceHolder.cs" />
     <Compile Include="Interfaces\IWindowService.cs" />
     <Compile Include="Services\WindowService.cs" />
     <Compile Include="Shell\App.xaml.cs">

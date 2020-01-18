@@ -7,6 +7,20 @@
         xmlns:local="clr-namespace:HackatownRecyling.Views"
         mc:Ignorable="d"
         Title="ResultsView" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="ChoiceTemplate">
+            <StackPanel>
+                <ContentPresenter>
+                    <ContentPresenter.Content>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Score, StringFormat={}Score: {0}}"/>
+                        </StackPanel>
+                    </ContentPresenter.Content>
+                </ContentPresenter>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -17,19 +31,19 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
+
         <Image Grid.ColumnSpan="3" Source="{Binding ImageSource}"/>
-        <Button Command="{Binding FirstChoiceCommand}" Grid.Row="1">
+        <Button Command="{Binding FirstChoiceCommand}" Grid.Row="1" ContentTemplate="{StaticResource ChoiceTemplate}" Content="{Binding FirstChoice}">
             <Button.CommandParameter>
                 <sys:Int32>0</sys:Int32>
             </Button.CommandParameter>
         </Button>
-        <Button Command="{Binding SecondChoiceCommand}" Grid.Row="1" Grid.Column="1">
+        <Button Command="{Binding SecondChoiceCommand}" Grid.Row="1" Grid.Column="1" ContentTemplate="{StaticResource ChoiceTemplate}" Content="{Binding SecondChoice}">
             <Button.CommandParameter>
                 <sys:Int32>1</sys:Int32>
             </Button.CommandParameter>
         </Button>
-        <Button Command="{Binding ThirdChoiceCommand}" Grid.Row="1" Grid.Column="2">
+        <Button Command="{Binding ThirdChoiceCommand}" Grid.Row="1" Grid.Column="2" ContentTemplate="{StaticResource ChoiceTemplate}" Content="{Binding ThirdChoice}">
             <Button.CommandParameter>
                 <sys:Int32>2</sys:Int32>
             </Button.CommandParameter>

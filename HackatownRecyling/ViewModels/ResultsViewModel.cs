@@ -1,4 +1,5 @@
 ﻿using HackatownRecyling.Common;
+using HackatownRecyling.Models;
 using Prism.Commands;
 using Prism.Events;
 using System;
@@ -16,6 +17,10 @@ namespace HackatownRecyling.ViewModels
         public ResultsViewModel(IEventAggregator eventAggregator)
         {
             RegisterCommands();
+            //todo: remove this, this is only for testing
+            FirstChoice = new ResultChoiceModel() { Name = "Cardboard", Score=0.9 };
+            SecondChoice = new ResultChoiceModel() { Name = "Glass", Score = 0.8 };
+            ThirdChoice = new ResultChoiceModel() { Name = "Trash", Score = 0.6 };
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<ImageLoadedByUserEvent>().Subscribe(ShowImage);
         }
@@ -23,6 +28,9 @@ namespace HackatownRecyling.ViewModels
         public ICommand FirstChoiceCommand { get; private set; }
         public ICommand SecondChoiceCommand { get; private set; }
         public ICommand ThirdChoiceCommand { get; private set; }
+        public ResultChoiceModel FirstChoice { get; private set; }
+        public ResultChoiceModel SecondChoice { get; private set; }
+        public ResultChoiceModel ThirdChoice { get; private set; }
         public BitmapSource ImageSource 
         {
             get
@@ -73,6 +81,8 @@ namespace HackatownRecyling.ViewModels
                 }
             }
         }
+
+        
 
         private void RegisterCommands()
         {
