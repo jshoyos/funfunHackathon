@@ -7,8 +7,6 @@ namespace HackatownRecyling.Services
 {
     internal class WindowService : IWindowService
     {
-        private readonly LiveCameraView _liveCameraView;
-        private readonly ResultsView _resultsView;
         private readonly ILifetimeScope _lifetimeScope;
 
         public WindowService(ILifetimeScope lifetimeScope)
@@ -33,13 +31,13 @@ namespace HackatownRecyling.Services
         public void ShowResultView()
         {
             var view = _lifetimeScope.Resolve<ResultsView>();
-            _resultsView.Show();
+            view.Show();
         }
 
         public void ShowLiveCameraView()
         {
             var view = _lifetimeScope.Resolve<LiveCameraView>();
-            _resultsView.Show();
+            view.Show();
         }
     }
 }
