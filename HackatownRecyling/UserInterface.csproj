@@ -74,6 +74,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Interfaces\IViewModel.cs" />
     <Compile Include="ViewModels\LiveCameraViewModel.cs" />
     <Compile Include="ViewModels\ResultsViewModel.cs" />
     <Compile Include="Views\LiveCameraView.xaml.cs">
