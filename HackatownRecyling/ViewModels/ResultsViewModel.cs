@@ -7,6 +7,8 @@ namespace HackatownRecyling.ViewModels
     public class ResultsViewModel : BindableBase
     {
         private string _firstChoiceText;
+        private string _secondChoiceText;
+        private string _thirdChoiceText;
         public ResultsViewModel()
         {
             RegisterCommands();
@@ -30,12 +32,12 @@ namespace HackatownRecyling.ViewModels
 
         public string SecondChoiceText
         {
-            get => _firstChoiceText;
+            get => _secondChoiceText;
             set
             {
-                if (_firstChoiceText != value)
+                if (_secondChoiceText != value)
                 {
-                    _firstChoiceText = value;
+                    _secondChoiceText = value;
                     OnPropertyChanged();
                 }
             }
@@ -43,12 +45,12 @@ namespace HackatownRecyling.ViewModels
 
         public string ThirdChoiceText
         {
-            get => _firstChoiceText;
+            get => _thirdChoiceText;
             set
             {
-                if (_firstChoiceText != value)
+                if (_thirdChoiceText != value)
                 {
-                    _firstChoiceText = value;
+                    _thirdChoiceText = value;
                     OnPropertyChanged();
                 }
             }
