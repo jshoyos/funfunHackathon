@@ -76,6 +76,8 @@
     </ApplicationDefinition>
     <Compile Include="Interfaces\IViewModel.cs" />
     <Compile Include="Models\ResultChoiceModel.cs" />
+    <Compile Include="Services\ClassificationService.cs" />
+    <Compile Include="Interfaces\IClassificationService.cs" />
     <Compile Include="ViewModels\LiveCameraViewModel.cs" />
     <Compile Include="ViewModels\ResultsViewModel.cs" />
     <Compile Include="Common\BindableBase.cs" />
