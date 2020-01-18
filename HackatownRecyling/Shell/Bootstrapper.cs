@@ -13,14 +13,19 @@ namespace HackatownRecyling.Shell
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
+
             builder.RegisterType<MainViewModel>().AsSelf();
             builder.RegisterType<MainWindow>().AsSelf();
 
             #region services
             builder.RegisterType<WindowService>().As<IWindowService>().SingleInstance();
-            builder.RegisterType<ResultsView>().AsSelf();
-            builder.RegisterType<LiveCameraView>().AsSelf();
             #endregion
+
+            builder.RegisterType<ResultsViewModel>().AsSelf();
+            builder.RegisterType<ResultsView>().AsSelf();
+
+            builder.RegisterType<LiveCameraViewModel>().AsSelf();
+            builder.RegisterType<LiveCameraView>().AsSelf();
 
             return builder.Build();
         }
