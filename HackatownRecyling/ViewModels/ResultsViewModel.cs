@@ -1,4 +1,5 @@
 ﻿using HackatownRecyling.Common;
+using HackatownRecyling.Interfaces;
 using HackatownRecyling.Models;
 using Prism.Commands;
 using Prism.Events;
@@ -12,8 +13,9 @@ namespace HackatownRecyling.ViewModels
     {
         private BitmapSource _imageSource;
         private readonly IEventAggregator _eventAggregator;
+        private readonly IClassificationService _classificationService;
 
-        public ResultsViewModel(IEventAggregator eventAggregator)
+        public ResultsViewModel(IEventAggregator eventAggregator, IClassificationService classificationService)
         {
             RegisterCommands();
             
@@ -24,6 +26,7 @@ namespace HackatownRecyling.ViewModels
             SecondChoice = new ResultChoiceModel() { Name = "Glass", Score = 0.8 };
             ThirdChoice = new ResultChoiceModel() { Name = "Trash", Score = 0.6 };
             _eventAggregator = eventAggregator;
+            _classificationService = classificationService;
             //_eventAggregator.GetEvent<ImageLoadedByUserEvent>().Subscribe(ShowImage);
         }
 
@@ -66,6 +69,7 @@ namespace HackatownRecyling.ViewModels
         public void ShowImage(string fileName)
         {
             ImageSource = new BitmapImage(new Uri(fileName));
+            _classificationService.Classify(fileName);
         }
 
         public void Dispose()

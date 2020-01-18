@@ -19,6 +19,8 @@ namespace HackatownRecyling.Shell
 
             #region services
             builder.RegisterType<WindowService>().As<IWindowService>().SingleInstance();
+            //todo: replace ClassificationMockService by ClassificationService
+            builder.RegisterType<ClassificationMockService>().As<IClassificationService>().SingleInstance();
             #endregion
 
             builder.RegisterType<ResultsViewModel>().AsSelf();
